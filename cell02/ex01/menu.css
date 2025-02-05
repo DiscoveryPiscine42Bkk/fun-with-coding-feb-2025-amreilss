@@ -1,0 +1,87 @@
+/* กำหนดรูปแบบพื้นฐานของ body และ h1 */
+body, h1 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f3f4f6; /* สีพื้นหลังของหน้า */
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 36px;
+  letter-spacing: 2px;
+  margin-top: 50px;
+}
+
+/* จัดการกับ container ให้อยู่ตรงกลาง */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* จัดตำแหน่งในแนวตั้ง */
+  align-items: center; /* จัดตำแหน่งในแนวนอน */
+  height: 100vh; /* ให้ container มีความสูงเต็มหน้าจอ */
+}
+
+/* เริ่มตกแต่งเมนูแบบเลื่อนลง */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 40px;
+}
+
+.dropdown-button {
+  background-color: #ff6f61; /* สีส้มอ่อน */
+  color: white;
+  padding: 18px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 250px;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* เพิ่มการเปลี่ยนแปลงเมื่อคลิก */
+}
+
+.dropdown-button:hover {
+  background-color: #ff3e2d; /* เปลี่ยนสีเมื่อเอาเมาส์ไปชี้ */
+  transform: scale(1.05); /* เพิ่มขนาดปุ่มเล็กน้อย */
+}
+
+.dropdown-content {
+  display: none; /* ซ่อนเมนูไว้ */
+  position: absolute;
+  background-color: #fff;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* แสดงเมนูเมื่อเอาเมาส์ไปชี้ */
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 14px 20px;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid #ddd;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #ff6f61; /* เปลี่ยนสีเมื่อเอาเมาส์ไปชี้ */
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-button:focus {
+  outline: none; /* ลบเส้นขอบเมื่อกดปุ่ม */
+}
