@@ -1,87 +1,72 @@
-/* กำหนดรูปแบบพื้นฐานของ body และ h1 */
-body, h1 {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #f3f4f6; /* สีพื้นหลังของหน้า */
+/* ตั้งค่าพื้นฐาน */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* สีพื้นหลัง */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* ให้เมนูอยู่ตรงกลางหน้าจอ */
 }
 
-h1 {
-  text-align: center;
-  color: #333;
-  font-size: 36px;
-  letter-spacing: 2px;
-  margin-top: 50px;
-}
-
-/* จัดการกับ container ให้อยู่ตรงกลาง */
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* จัดตำแหน่งในแนวตั้ง */
-  align-items: center; /* จัดตำแหน่งในแนวนอน */
-  height: 100vh; /* ให้ container มีความสูงเต็มหน้าจอ */
-}
-
-/* เริ่มตกแต่งเมนูแบบเลื่อนลง */
+/* กล่องเมนู */
 .dropdown {
-  position: relative;
-  display: inline-block;
-  margin-top: 40px;
+    position: relative;
+    display: inline-block;
 }
 
-.dropdown-button {
-  background-color: #ff6f61; /* สีส้มอ่อน */
-  color: white;
-  padding: 18px 30px;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 250px;
-  text-align: center;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* เพิ่มการเปลี่ยนแปลงเมื่อคลิก */
+/* ปุ่มเมนู */
+.dropbtn {
+    background-color: rgb(255, 195, 0); /* สีเหลืองเหมือนขนมปัง */
+    color: #333; /* สีตัวอักษร */
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.dropdown-button:hover {
-  background-color: #ff3e2d; /* เปลี่ยนสีเมื่อเอาเมาส์ไปชี้ */
-  transform: scale(1.05); /* เพิ่มขนาดปุ่มเล็กน้อย */
+/* เมื่อเอาเมาส์ไปชี้ที่ปุ่ม */
+.dropbtn:hover {
+    background-color: rgb(255, 165, 0); /* สีเข้มขึ้น */
+    transform: scale(1.05); /* ขยายเล็กน้อย */
 }
 
+/* เมนู Drop-down */
 .dropdown-content {
-  display: none; /* ซ่อนเมนูไว้ */
-  position: absolute;
-  background-color: #fff;
-  min-width: 200px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border-radius: 8px;
-  margin-top: 10px;
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    z-index: 1;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block; /* แสดงเมนูเมื่อเอาเมาส์ไปชี้ */
-}
-
+/* ลิงก์ในเมนู */
 .dropdown-content a {
-  color: #333;
-  padding: 14px 20px;
-  text-decoration: none;
-  display: block;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-  border-bottom: 1px solid #ddd;
+    color: #333; /* สีตัวอักษร */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
 }
 
+/* เมื่อเอาเมาส์ไปชี้ที่ลิงก์ */
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
-  color: #ff6f61; /* เปลี่ยนสีเมื่อเอาเมาส์ไปชี้ */
+    background-color: #f0f0f0; /* สีเทาอ่อน */
 }
 
-.dropdown-content a:last-child {
-  border-bottom: none;
+/* แสดงเมนูเมื่อ hover */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
-.dropdown-button:focus {
-  outline: none; /* ลบเส้นขอบเมื่อกดปุ่ม */
+/* เมื่อ hover ที่ปุ่ม */
+.dropdown:hover .dropbtn {
+    background-color: rgb(255, 140, 0); /* สีส้มเข้ม */
 }
