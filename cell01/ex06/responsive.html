@@ -5,55 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Table</title>
   <style>
-    /* สไตล์สำหรับตาราง */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
     table {
       width: 100%;
       height: 100%;
-      table-layout: fixed; /* ให้ตารางไม่ขยายตามเนื้อหาภายใน */
+      border: 1px solid black;
       border-collapse: collapse;
-      margin-top: 20px;
+      table-layout: fixed; /* บังคับให้เซลล์ในตารางปรับขนาดอัตโนมัติ */
     }
+
     td {
       text-align: center;
       vertical-align: middle;
-      font-size: 24px;
-      font-family: Arial, sans-serif;
-      color: black;
-      padding: 10px;
-    }
-    .cell1 {
-      background-color: #d3d69d; /* สีพื้นหลังเหลือง */
-    }
-    .cell2 {
-      background-color: #ffb3ab; /* สีพื้นหลังส้ม */
+      font-size: 3vw; /* ขนาดตัวอักษรปรับตามความกว้างของหน้าจอ */
+      color: white;
     }
 
-    /* ให้ตารางเลื่อนหากเนื้อหามากเกินไป */
-    .table-container {
-      overflow-x: auto;
-      width: 100%;
+    /* ตั้งสีพื้นหลังของแต่ละเซลล์ */
+    .box1 {
+      background-color: #FF5733; /* สีแดง */
     }
 
-    /* Media Query สำหรับหน้าจอขนาดเล็ก */
-    @media (max-width: 768px) {
-      td {
-        font-size: 16px; /* ลดขนาดฟอนต์เมื่อหน้าจอเล็กลง */
-        padding: 5px;
-      }
+    .box2 {
+      background-color: #33CFFF; /* สีน้ำเงิน */
     }
-
   </style>
 </head>
 <body>
-
-  <div class="table-container">
-    <table>
-      <tr>
-        <td class="cell1">First cell</td>
-        <td class="cell2">Second cell</td>
-      </tr>
-    </table>
-  </div>
-
+  <table>
+    <tr>
+      <td class="box1">Hello</td>
+      <td class="box2">Thailand</td>
+    </tr>
+  </table>
 </body>
 </html>
